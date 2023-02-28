@@ -1,2 +1,8 @@
-# Big-Data-Analytics-Lab
-Lab Tasks For The Big Data Analytics Course
+# Big Data Analytics Lab
+# Course
+DL3011 Big Data Analytics Lab
+
+# Description
+Solution of Lab Tasks that I have done in the Semester while Studing Big Data Analytics's Course in the Lab.
+
+# Languages
