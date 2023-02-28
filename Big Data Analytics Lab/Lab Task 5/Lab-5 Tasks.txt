@@ -1,0 +1,50 @@
+Lab-5
+
+Note/Submission Guidelines:
+
+You are required to submit only three screenshots named "Roll-Number-Part-1, Roll-Number-Part-2, Roll-Number-Part-3" in the submission (See the samples provided with this lab namely "i19-1207-Part-1, i19-1207-Part-2, i19-1207-Part-3", which will tell you which part of the screen to include). These screenshots will contain different types of system signatures that will prove that this lab was done by you.
+
+Secondly, It is a must requirement that you change the name to your name and the roll number to your roll number where required for example wherever "i19-1207" is used it means replace with your roll number and "Saad Naeem" with your Name.
+
+Finally, i have used the term "commands like" quite frequently which means my system "Mac OSX" works with these commands. Your commands will differ depending on your system (different paths, configurations etc) but the meta structure remains the same.
+
+LAB TASKS:
+
+
+1-Perform Hadoop (3.2.1) single node installation on your system.
+You can either use virtual box (Ubuntu), Ubuntu, Windows, Mac, or any other Unix/Linux based system.
+You can follow along any tutorial you find or can use the Lab Manual provided with this lab as well (But make sure your hadoop version is 3.2.1)
+
+
+2- After you have successfully installed Hadoop check your Hadoop version using "hadoop version" command.
+
+
+3- Next start all the Hadoop services using commands like:
+cd /usr/local/cellar/hadoop/3.2.1/libexec/sbin
+./start-all.sh
+(Use "jps" command to check whether your name nodes, datanodes etc are up)
+
+4- Next, Make a directory in your hadoop file system:
+hadoop fs -mkdir /i19-1207
+hadoop fs -mkdir /i19-1207/Input
+(Use the above naming convention strictly)
+
+
+5- Replace all the occurrences of "Saad Naeem" with your name in .txt file provided with this lab. Do not change anything else in the file.
+
+4- Put this text file in your hadoop file system using command like:
+hadoop fs -put /Users/saadnaeem/Documents/MapReduce/src/org/Hadoop/MapReduce/Input/input.txt /i19-1207/Input
+(hadoop fs -put path/to/your.input.txt /hadoop/filesystem)
+
+
+5-Run the word count program using the jar (Saad.jar) file provided with this lab to perform word count using command like:
+hadoop jar /usr/local/Cellar/hadoop/3.2.1/libexec/share/hadoop/mapreduce/Saad.jar /i19-1207/Input /WordCount/i19-1207
+(hadoop jar /path/to/jar /hadoop/filesystem/input /hadoop/filesystem/outputDirectory)
+Make sure that output directory does not already exist otherwise it will cause an error. Take the screenshot of the terminal and save it as Roll-Number-Part-1 (Look at sample i19-1207-Part-1 Screenshot provided with lab files. This would be a proof that your WordCount executed successfully)
+
+6- In hadoop GUI (http://localhost:9870 may differ on your system depending on your configuration) Go to utilities ->Browse the file system -> 	/WordCount/i19-1207 and take a Screenshot, Name it Roll-Number-Part-2 (This would be a proof that your tasks 3 & 4 executed successfully) See the i19-1207-Part-2 Sample Screenshot Provided with this lab.
+
+6- In hadoop GUI (http://localhost:9870 may differ on your system depending on your configuration) Go to utilities ->Browse the file system -> 	WordCount -> i19-1207 -> part-r-00000 ->  Head the file (first 32K) and take the screenshot, name it Roll-Number-Part-3 (This would show that everything worked as expected. See the sample screenshot i19-1207-Part-3 provided with this lab.
+
+7- Stop hadoop cluster using command like:
+./stop-all.sh   
